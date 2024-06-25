@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Product List</h1>
+<ul>
+    {% for product in products %}
+    <li>{{ product.name }} - {{ product.brand }} - ${{ product.price }}</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('product_directory.add_product') }}">Add New Product</a>
+{% endblock %}
